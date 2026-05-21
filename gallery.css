@@ -70,6 +70,7 @@ body {
     border-radius: 25px;         
     text-decoration: none;
     font-weight: bold;
+	margin-right:-50px;
     
     display: flex;         
     justify-content: center;  
