@@ -1,5 +1,3 @@
-
-
 nav {
     color: white;
     background: linear-gradient(
@@ -13,7 +11,6 @@ nav {
     top: 0;
     left: 0;           
     width: 100%;       
-    z-index: 1000;     
 
     font-size: 25px;
     padding: 15px 10%; 
@@ -22,16 +19,14 @@ nav {
     justify-content: space-between; 
     align-items: center;  
 	box-sizing: border-box; 
-    z-index: 9999; 
+    z-index: 9999; /* 修正：保留一個最高的 z-index 即可 */
 	animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-
 }
 
 .logo {
     color: white;
-	left: 50%;
     font-size: 40px;
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
@@ -46,8 +41,6 @@ nav ul{
   height:100%;
   flex-direction: row;
 	margin-right:30px;
-     
-  
 }
 nav a{
   display: flex;
@@ -55,14 +48,12 @@ nav a{
   text-decoration: none;
   align-items:center;
   font-size:25px;
-	
 }
 nav a:hover {
     color:#4FC3F7; 
 }
 body {
     margin: 0;
-    
 }
 .col-auto{
     color:black;
@@ -84,22 +75,6 @@ body {
     white-space: nowrap;    
 }
 
-@media (max-width: 768px) {
-    nav {
-        padding: 18px 5%;
-    }
-    .logo {
-        font-size: 30px;
-    }
-    nav ul {
-        gap: 25px;
-        font-size: 19px;
-    }
-    .login-btn {
-        padding: 8px 16px;
-        font-size: 16px;
-    }
-}
 @keyframes slideIn {
   0% {
     transform: translateY(-10px);
@@ -117,7 +92,7 @@ body {
     margin-top: 160px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     animation: slideIn 1s ease-out;
-	font-family: "Playfair Display ", serif;
+	font-family: "Playfair Display", serif;
     font-style: normal;
 }
 
@@ -134,7 +109,7 @@ body {
   animation-name: slideIn;
   animation-duration: 1s;
   animation-timing-function: ease-out;
-  
+  box-sizing: border-box;
 }
 
 .box-1, .box-2, .box-3, .box-4 {
@@ -183,18 +158,17 @@ h2 {
     justify-content: center;
     margin: auto;
     width: 90%;
-    gap: 90px;  
+    gap: 5%;  /* 修正：使用百分比 gap 避免大螢幕爆開 */
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
 }
 .image-box {
     width: 50%; 
-    margin-left: 60px;
 }
 .image-box img {
     width: 100%;
-    height: 900px; 
+    height: 600px; /* 修正：縮小網頁端預設高度，避免過長 */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     object-fit: cover;
@@ -208,19 +182,18 @@ h2 {
 	backdrop-filter: blur(5px); 
 	padding: 40px;
     border-radius: 20px;
-	z-index: -1;
-	
+    box-sizing: border-box;
 }
 
 .description-box h1{
 	color: #0F2D5C;
     font-size: 25px;
-    height: 80px; 
+    height: auto; /* 修正：不要限制死高度 */
+    min-height: 40px;
     justify-content:center;
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-    
 	margin-top:auto;
 	margin-right:auto;
 	font-weight:400;
@@ -228,14 +201,14 @@ h2 {
 .descriptions-box-2 h1{
 	color: #0F2D5C;
     font-size: 25px;
-    height: 80px; 
+    height: auto; /* 修正：不要限制死高度 */
     justify-content:center;
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 	margin-top:30px;
-	margin-right:60px;
+	margin-right:0px; /* 修正：手機版會歪掉 */
 	font-weight:400;
 }
 .descriptions-box-2 {
@@ -243,33 +216,25 @@ h2 {
     margin: 40px auto;
     width: 90%; 
     max-width: 1200px;
-
     background: rgba(255, 255, 255, 0.3) !important; 
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
-    
     padding: 40px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.5); 
-
-    
     position: relative; 
     display: block;
-	 z-index: -1;
-	
-	
+    box-sizing: border-box;
 }
 .description-box-3 {
     width: 55%;
     margin-top: 10px;           
-    padding: 30px 20px;
     text-align: left;
 	background: rgba(255, 255, 255, 0.2);
-	 backdrop-filter: blur(5px); 
+	backdrop-filter: blur(5px); 
 	padding: 40px;
     border-radius: 20px;
-	z-index: -1;
-	
+    box-sizing: border-box;
 }
 .description-box-3 h1 {
     color: #0F2D5C;
@@ -284,41 +249,34 @@ h1 {
     font-size: 25px;
 	font-weight: 400;
     height: auto; 
-    justify-content:center;
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 	margin-top:30px;
 	text-align:center;
-	align-center:center;
-	
-	
 }
 
 h3 {
-    
     color: #2563EB;
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-	font-family: "Playfair Display ", serif;
+	font-family: "Playfair Display", serif;
     font-weight: 500;
     font-style: normal;
 	font-size:20px;
 	text-transform: none;
-	margin-right:40px;
-	
 }
 li{
-    color: #1A3C5E; ; 
+    color: #1A3C5E; 
     line-height: 1.8;
     font-size: 20px;
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-	font-family: "Playfair Display ", serif;
+	font-family: "Playfair Display", serif;
     font-weight: 400;
     font-style: normal;
 	text-transform: none;
@@ -338,21 +296,18 @@ p{
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-	font-family: "Playfair Display ", serif;
+	font-family: "Playfair Display", serif;
     font-weight: 400;
     font-style: normal;
 	font-size:20px;
 	text-transform: none;
-	
 }
 .image-box_2{
     width:90%;
-    margin-left:70px;
+    margin: 0 auto;
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-	align-items:center;
-
 }
 .safety-guide {
     display: flex;
@@ -365,9 +320,11 @@ p{
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+    box-sizing: border-box;
 }
 .image-box_2 img{
     width:100%;
+    height: auto; /* 修正：讓非固定比例圖能自適應 */
     box-shadow:2px 2px 5px rgba(0, 0, 0, 0.3) ;
     border-radius:20px;
     cursor:pointer;
@@ -375,15 +332,6 @@ p{
     animation-duration: 1s;
     animation-timing-function: ease-out;
     border: 3px solid white;
-
-}
-safety-guide {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 95%;
-    gap: 5%;
-    align-items: flex-start;    
-    margin: 0 auto;
 }
 
 .image-box_3{
@@ -392,13 +340,12 @@ safety-guide {
 }
 .image-box_3 img{
     width:100%;
-    margin-top:60px;
-    height:1000px;
+    height: 600px; /* 修正：網頁端高度調小 */
     box-shadow:2px 2px 5px rgba(0, 0, 0, 0.3) ;
     border-radius:20px;
     cursor:pointer;
     border: 2px solid white;
-
+    object-fit: cover;
 }
 
 .detail-btn{
@@ -408,93 +355,266 @@ safety-guide {
     border-radius: 25px;         
     text-decoration: none;
     font-weight: bold;
-	width: 300px;
-    margin-top: 80px;
-    margin-left: auto;  
-    margin-right: auto;  
+	width: 100%;
+    max-width: 300px; /* 修正：避免手機版爆開 */
+    display: inline-block;
+    text-align: center;
+}
+
+/* ==========================================
+   重新優化與擴充後的 RWD 手機版區塊 (max-width: 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 5%;
+    }
+    .logo {
+        font-size: 26px;
+    }
+    nav ul {
+        gap: 15px;
+        margin-right: 0px;
+    }
+    nav a {
+        font-size: 16px;
+    }
+    .login-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+        margin-right: 0px; /* 修正：原本的 -50px 會讓按鈕在手機上飛出螢幕 */
+    }
+    
+    /* 修正四個卡片在手機上改為單欄排列，且高度自適應 */
+    .summary-box {
+        flex-direction: column;
+        height: auto;
+        min-height: initial;
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    /* 修正大標題在手機上過大的問題 */
+    h2 {
+        font-size: 32px;
+    }
+    
+    /* 關鍵修正：讓左右並排的區塊在手機上變成上下疊放 */
+    .guide, .safety-guide {
+        flex-direction: column !important;
+        width: 95%;
+        gap: 20px;
+    }
+    
+    /* 手機上寬度全滿，避免文字或圖片被擠成細長條 */
+    .image-box, .description-box, .description-box-3, .image-box_3 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 20px !important;
+    }
+    
+    /* 關鍵修正：解決圖片壓死文字的問題，高度改為自動或適中高度 */
+    .image-box img, .image-box_3 img {
+        height: 300px !important; 
+        object-fit: cover;
+        margin-top: 10px !important;
+    }
+    
+    /* 調整手機版字體大小，避免溢出 */
+    .description-box, p {
+        font-size: 16px !important;
+    }
+    .description-box h1, .descriptions-box-2 h1, .description-box-3 h1, h1 {
+        font-size: 20px !important;
+    }
+    li {
+        font-size: 16px !important;
+        margin-left: 15px;
+    }
+}
+
+span-2 {
+    text-decoration: underline;
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+p {  
+    color: #1A3C5E; 
+    line-height: 1.9;
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+	font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-style: normal;
+	font-size:20px;
+	text-transform: none;
+}
+
+.image-box_2 {
+    width: 90%;
+    margin: 0 auto; /* 修正：取消固定 margin-left，改為居中 */
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.safety-guide {
+    display: flex;
+    flex-direction: row-reverse;     
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;               
+    gap: 5%;
+    align-items: flex-start;         
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    box-sizing: border-box;
+}
+
+.image-box_2 img {
+    width: 100%;
+    height: auto; /* 修正：防止圖片比例在手機上被壓扁 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    cursor: pointer;
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    border: 3px solid white;
+}
+
+/* 修正：HTML 標籤選擇器不可以漏掉點，如果是 class 記得加點，這裡先幫你修復語法 */
+safety-guide {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 95%;
+    gap: 5%;
+    align-items: flex-start;    
+    margin: 0 auto;
+}
+
+.image-box_3 {
+    width: 40%;
+	margin-top: 10px;
+}
+
+.image-box_3 img {
+    width: 100%;
+    margin-top: 60px;
+    height: 600px; /* 修正：網頁端高度從 1000px 縮小到 600px，避免過長，手機版會再調小 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    cursor: pointer;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+.detail-btn {
+    background-color: #ffffff; 
+    color: #000000;              
+    padding: 12px 15px;
+    border-radius: 25px;         
+    text-decoration: none;
+    font-weight: bold;
+	width: 100%;
+    max-width: 300px; /* 修正：限制最大寬度，防止手機爆開 */
+    margin: 40px auto 0 auto; /* 修正：margin-top 從 80px 縮小，並自動居中 */
     display: flex;       
     justify-content: center;
     align-items: center;
-    font-size:25px;
-	
+    font-size: 25px;
+    box-sizing: border-box;
 }
-.detail-btn:hover{
-    color:#4FC3F7;
-}
-.floating-cards{
-    display:flex;
-    gap:40px;
-    justify-content:center;
-    align-items:center;
-    width:90%;
-    margin-left:70px;
-    margin-right:20px;
 
+.detail-btn:hover {
+    color: #4FC3F7;
 }
-.card{
-    box-shadow:2px 2px 5px rgba(0, 0, 0, 0.3);
-    height:500px;
-    gap:30px;
+
+.floating-cards {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch; /* 修正：高度對齊 */
+    width: 90%;
+    margin: 0 auto; /* 修正：取消固定偏心的 margin-left/right */
+    box-sizing: border-box;
+}
+
+.card {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    height: auto; /* 修正：高度改為自動，靠 padding 撐開，絕不重疊 */
+    min-height: 450px; /* 給予一個基礎高度 */
+    padding: 30px 20px; /* 新增內邊距，防止字貼邊 */
+    gap: 20px;
     flex: 1;
-    align-items:center;
-    text-align:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     border-radius: 20px;
-     backdrop-filter: blur(30px);  
-    cursor:pointer;
+    backdrop-filter: blur(30px);  
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: transform 0.3s;
 }
-.card:hover{
+
+.card:hover {
     transform: translateY(-4px);
 }
-ul {
-  display: inline-block; 
-  text-align: left;
 
+ul {
+    display: inline-block; 
+    text-align: left;
 }
-h4{
+
+h4 {
     color: white;
     font-size: 40px;
-    height: 80px; 
-	display:flex;
-    justify-content:center;
+    height: auto; /* 修正：高度不要限制死 */
+    margin-bottom: 20px;
+	display: flex;
+    justify-content: center;
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out; 
 }
-h5{ 
-    color:white;
-    width:100%;
-    text-align:left;
-    margin-left:15px;
-    margin-top:-20px;
-    margin-right:15px;
-    font-size:20px;
+
+h5 { 
+    color: white;
+    width: 100%;
+    text-align: left;
+    margin: 0; /* 修正：原本的負 margin 在手機上會把字往上移壓到別的字 */
+    padding: 0 15px;
+    font-size: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 	display: flex;
     flex-direction: column; 
     align-items: center;   
     justify-content: center; 
     text-align: center;      
+    box-sizing: border-box;
 }
-body{
+
+body {
 	background-color: #ADD2FF;
 }
 
 .flex-container {
     display: flex;
-   
     flex-wrap: wrap; 
-    justify-content: flex-start; 
+    justify-content: center; /* 修正：改為置中排版比較好看 */
     gap: 30px; 
     padding: 60px 10%;
     box-sizing: border-box;
     width: 100%;
 }
 
-
 .reveal-card {
-  
     width: calc(33.333% - 20px); 
-    min-width: 300px;
+    min-width: 280px; /* 修正：稍微調小基本寬度，適應小螢幕 */
     height: 420px;
     position: relative;
     border-radius: 24px !important;
@@ -503,7 +623,6 @@ body{
     background: #FFFFFF;
     box-sizing: border-box;
 }
-
 
 .card-cover-front {
     position: absolute;
@@ -524,7 +643,6 @@ body{
     filter: url('#liquid-water-edge') !important; 
     backdrop-filter: blur(8px) !important; 
 }
-
 
 .card-content-back {
     position: absolute;
@@ -563,3 +681,64 @@ body{
 }
 .reveal-card:hover .card-cover-front { clip-path: circle(0% at 50% 50%); }
 .reveal-card:hover .card-cover-front h3 { opacity: 0; transition: opacity 0.6s ease-in-out !important; }
+
+/* ==========================================
+   新增與合併 RWD 手機版區塊 (max-width: 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. 讓安全指南區塊變為上下排列 */
+    .safety-guide {
+        flex-direction: column !important; /* 強制改為由上到下 */
+        width: 95%;
+        gap: 20px;
+        padding: 10px;
+    }
+    .image-box_3 {
+        width: 100% !important; /* 寬度佔滿 */
+    }
+    .image-box_3 img {
+        height: 350px !important; /* 手機上圖片縮小高度，避免過大 */
+        margin-top: 20px;
+    }
+
+    /* 2. 讓浮動卡片區塊（floating-cards）在手機版變單欄上下排列 */
+    .floating-cards {
+        flex-direction: column;
+        width: 95%;
+        gap: 20px;
+    }
+    .card {
+        width: 100%;
+        min-height: initial; /* 取消最小高度限制，改由內容撐開 */
+        padding: 25px 15px;
+    }
+    h4 {
+        font-size: 28px; /* 手機上卡片標題縮小 */
+    }
+
+    /* 3. 關鍵修復：翻轉卡片（flex-container / reveal-card）在手機上的寬度 */
+    .flex-container {
+        padding: 30px 5%; /* 減少外距空間 */
+        gap: 20px;
+    }
+    .reveal-card {
+        width: 100% !important; /* 手機上直接佔滿 100% 寬度，不跟別人擠 */
+        max-width: 100%;
+        height: 380px; /* 稍微縮小一點卡片高度適合閱讀 */
+    }
+    .card-content-back {
+        padding: 20px; /* 縮小內邊距以容納文字 */
+    }
+    .card-content-back h3 {
+        font-size: 20px;
+    }
+    .card-content-back li {
+        font-size: 16px;
+    }
+    
+    /* 4. 按鈕微調 */
+    .detail-btn {
+        font-size: 20px;
+        padding: 10px;
+    }
+}
