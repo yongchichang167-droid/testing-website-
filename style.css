@@ -36,7 +36,7 @@ nav {
 }
 nav ul{
   display: flex;
-  gap:20px; /* 💡 完全保留你的 20px */
+  gap:60px; /* 💡 完全保留你的 20px */
   list-style:none;
   align-items:center;
   height:100%;
