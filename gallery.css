@@ -39,13 +39,13 @@ nav {
 }
 nav ul{
   display: flex;
-  gap:60px;
+  gap:20px;
   list-style:none;
   align-items:center;
   height:100%;
   flex-direction: row; 
   align-items: center;
-    margin: 0 40px 0 auto !important; 
+   margin: 0 100px 0 auto; 
   
 }
 nav a{
@@ -71,7 +71,12 @@ body {
     border-radius: 25px;         
     text-decoration: none;
     font-weight: bold;
-	margin-right:-50px;
+	width: 100%;           /* 隨手機螢幕寬度自動伸縮 */
+    max-width: 100%;       /* 再次限制，絕對不准大於螢幕寬度 */
+    box-sizing: border-box;
+	
+    /* 💡 核心修復：取消原本的 -50px，改為 0px，按鈕就不會往外噴了 */
+    margin-right: 0px !important; 
     
     display: flex;         
     justify-content: center;  
