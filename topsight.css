@@ -284,30 +284,47 @@ body{
    專屬手機版區塊：解除限制，允許導覽列遇到窄螢幕時自動換行
    =================================================== */
 @media screen and (max-width: 768px) {
+    /* ===================================================
+       手機版：允許自動換行，但強迫調整換行後的完美順序！
+       =================================================== */
     
     nav {
-        padding: 10px 4% !important; /* 保持手機版微縮留白 */
+        padding: 15px 4% !important;
+        flex-wrap: wrap !important;   /* 🔥 繼續保留你想要的「允許自動換行」萬靈丹！ */
         display: flex !important;
-        justify-content: space-between !important; /* 強制左右元素彈開到兩側 */
-    }
-    
-    /* 💡 核心修正：縮小選單的寬度，並用 margin-right 主動把 Log In 按鈕往右邊推開 */
-    nav ul {
-        display: flex !important;
-        gap: 10px !important;         /* 稍微縮小文字選項之間的間距，騰出空間 */
-        margin-right: 20px !important; /* 🔥 關鍵：用正的 margin 把右邊的登入按鈕強行推開 20px，防止太接近 */
-        padding: 0 !important;
-		 margin: 0 100px 0 auto; 
+        justify-content: space-between !important;
+        align-items: center !important;
     }
 
-    /* 確保手機版的文字和登入按鈕不會貼在一起 */
-    .login-btn.mobile-login {
-        margin-right: 0px !important;  
-        padding: 6px 12px !important;  
-        font-size: 14px !important;    
-        flex-shrink: 0 !important;     /* 🔥 防止按鈕在小螢幕上被文字擠壓到變形 */
+    /* 💡 排序魔法 1：強迫 Logo 永遠當老大，固定在第一排的最左邊 */
+    .logo {
+        order: 1 !important;
+        flex: 1 !important; /* 讓 Logo 佔據左側剩餘空間，把按鈕推到最右邊 */
+        text-align: left !important;
+    }
+
+    /* 💡 排序魔法 2：強迫 Log In 按鈕固定在第一排的最右邊 */
+    .login-btn {
+        order: 2 !important;
+        margin: 0 !important;
+        padding: 8px 16px !important;
+        width: auto !important; /* 防止寬度失控 */
+        flex-shrink: 0 !important;
+    }
+
+    /* 💡 排序魔法 3：當寬度真的不夠時，強迫橫向文字選單「自己」掉到第二排，絕對不影響第一排 */
+    nav ul {
+        order: 3 !important;        /* 🔥 順序排最後，換行時會自己乖乖掉到下方第二排 */
+        width: 100% !important;     /* 🔥 寬度佔滿 100%，強迫它在第二排完美置中 */
+        display: flex !important;
+        justify-content: center !important; /* 在第二排漂亮居中 */
+        gap: 15px !important;       /* 稍微縮小手機版的選項間距，防止二次爆開 */
+        margin: 12px 0 0 0 !important; /* 與第一排的 Logo/按鈕保持 12px 的舒適上方距離 */
+        padding: 0 !important;
+        flex-shrink: 1 !important;
     }
 }
+
 @media (max-width: 768px) {
     nav {
         padding: 10px 5%;
