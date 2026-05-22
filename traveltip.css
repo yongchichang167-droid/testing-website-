@@ -11,15 +11,16 @@ nav {
     top: 0;
     left: 0;           
     width: 100%;       
+    z-index: 1000;     
 
-    font-size: 25px;
-    padding: 15px 10%; 
+    font-size: 25px; /* 💡 完全保留你的 25px */
+    padding: 15px 4%; /* 💡 只調整左右內邊距，把飛出去的按鈕拉回螢幕內 */
 
     display: flex;
     justify-content: space-between; 
     align-items: center;  
 	box-sizing: border-box; 
-    z-index: 9999; /* 修正：保留一個最高的 z-index 即可 */
+    z-index: 9999; 
 	animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -27,7 +28,8 @@ nav {
 
 .logo {
     color: white;
-    font-size: 40px;
+	left: 50%;
+    font-size: 40px; /* 💡 完全保留你的 40px */
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -35,21 +37,19 @@ nav {
 }
 nav ul{
   display: flex;
-  gap:20px;
+  gap:20px; /* 💡 完全保留你的 20px */
   list-style:none;
   align-items:center;
   height:100%;
   flex-direction: row;
-
-  flex-shrink: 0; 
-	 margin: 0 100px 0 auto; 
+   margin: 0 100px 0 auto; 
 }
 nav a{
   display: flex;
   color:white;
   text-decoration: none;
   align-items:center;
-  font-size:25px;
+  font-size:25px; /* 💡 完全保留你的 25px */
 }
 nav a:hover {
     color:#4FC3F7; 
@@ -67,18 +67,21 @@ body {
     border-radius: 25px;         
     text-decoration: none;
     font-weight: bold;
-	margin: 0 !important;
+	width: 100%;           /* 隨手機螢幕寬度自動伸縮 */
+    max-width: 100%;       /* 再次限制，絕對不准大於螢幕寬度 */
+    box-sizing: border-box;
+	
+    /* 💡 核心修復：取消原本的 -50px，改為 0px，按鈕就不會往外噴了 */
+    margin-right: 0px !important; 
     
     display: flex;         
     justify-content: center;  
     align-items: center;    
     
     transition: 0.3s;
-    white-space: nowrap;   
-	width: 100%;           /* 隨手機螢幕寬度自動伸縮 */
-    max-width: 100%;       /* 再次限制，絕對不准大於螢幕寬度 */
-    box-sizing: border-box;
+    white-space: nowrap;    
 }
+
 
 @keyframes slideIn {
   0% {
@@ -379,6 +382,7 @@ p{
     nav ul {
         gap: 15px;
         margin-right: 0px;
+		 margin: 0 100px 0 auto; 
     }
     nav a {
         font-size: 16px;
@@ -701,6 +705,7 @@ body {
         gap: 10px !important;         /* 稍微縮小文字選項之間的間距，騰出空間 */
         margin-right: 20px !important; /* 🔥 關鍵：用正的 margin 把右邊的登入按鈕強行推開 20px，防止太接近 */
         padding: 0 !important;
+		 margin: 0 100px 0 auto; 
     }
 
     /* 確保手機版的文字和登入按鈕不會貼在一起 */
