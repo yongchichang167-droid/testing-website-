@@ -40,16 +40,12 @@ nav {
 }
 nav ul{
   display: flex;
-  gap:40px;
+  gap:20px; /* 💡 完全保留你的 20px */
   list-style:none;
   align-items:center;
   height:100%;
   flex-direction: row;
-  margin: 0 100px 0 auto; 
-  flex-shrink: 0; 
-    align-items: center;    
-     
-  
+   margin: 0 100px 0 auto; 
 }
 nav a{
   display: flex;
@@ -74,19 +70,20 @@ body {
     border-radius: 25px;         
     text-decoration: none;
     font-weight: bold;
-	margin: 0 !important;
+	width: 100%;           /* 隨手機螢幕寬度自動伸縮 */
+    max-width: 100%;       /* 再次限制，絕對不准大於螢幕寬度 */
+    box-sizing: border-box;
+	
+    /* 💡 核心修復：取消原本的 -50px，改為 0px，按鈕就不會往外噴了 */
+    margin-right: 0px !important; 
     
     display: flex;         
     justify-content: center;  
     align-items: center;    
     
     transition: 0.3s;
-    white-space: nowrap;   
-	width: 100%;           /* 隨手機螢幕寬度自動伸縮 */
-    max-width: 100%;       /* 再次限制，絕對不准大於螢幕寬度 */
-    box-sizing: border-box;
+    white-space: nowrap;    
 }
-
 @keyframes slideIn {
   0% {
     transform: translateY(-10px);
@@ -235,82 +232,96 @@ h4{
 body{
 	background-color: #ADD2FF;
 }
-/* ======================== 手機版 NAV 最終正確版本 ======================== */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     
     nav {
-        padding: 12px 4% !important;
+        padding: 10px 4% !important; /* 保持手機版微縮留白 */
         display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        flex-wrap: nowrap !important;           /* 強制不換行 */
+        justify-content: space-between !important; /* 強制左右元素彈開到兩側 */
     }
-
-    .logo {
-        font-size: 24px !important;
-        flex-shrink: 0 !important;
-    }
-
-    /* 中間的選單（Home, Top Sights, Local Food, Travel Tips） */
-    nav ul.nav-links,
+    
+    /* 💡 核心修正：縮小選單的寬度，並用 margin-right 主動把 Log In 按鈕往右邊推開 */
     nav ul {
         display: flex !important;
-        flex-direction: row !important;
-        gap: 12px !important;                   /* 間距縮小 */
-        margin: 0 !important;
-        flex-wrap: nowrap !important;
-		margin: 0 40px 0 auto !important; 
-		padding: 0 !important;
-        flex-shrink: 1 !important;
+        gap: 10px !important;         /* 稍微縮小文字選項之間的間距，騰出空間 */
+        margin-right: 20px !important; /* 🔥 關鍵：用正的 margin 把右邊的登入按鈕強行推開 20px，防止太接近 */
+        padding: 0 !important;
+		 margin: 0 100px 0 auto; 
     }
 
+    /* 確保手機版的文字和登入按鈕不會貼在一起 */
+    .login-btn.mobile-login {
+        margin-right: 0px !important;  
+        padding: 6px 12px !important;  
+        font-size: 14px !important;    
+        flex-shrink: 0 !important;     /* 🔥 防止按鈕在小螢幕上被文字擠壓到變形 */
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 5%;
+    }
+    .logo {
+        font-size: 26px;
+    }
+    nav ul {
+        gap: 15px;
+        margin-right: 0px;
+		 margin: 0 100px 0 auto; 
+    }
     nav a {
-        font-size: 14.5px !important;
-        white-space: nowrap !important;         /* 防止文字斷行 */
+        font-size: 16px;
     }
-
-    /* Log in 按鈕 - 最重要的修正 */
     .login-btn {
-        padding: 7px 18px !important;
-        font-size: 14px !important;
-        margin: 0 !important;
-        flex-shrink: 0 !important;              /* 絕對不准被壓縮或切掉 */
-        white-space: nowrap !important;
-        background-color: #ffffff !important;
-        color: #000000 !important;
+        padding: 6px 12px;
+        font-size: 14px;
+        margin-right: 0px; /* 修正：原本的 -50px 會讓按鈕在手機上飛出螢幕 */
     }
-
-    /* ======================== 其他頁面常見問題修正 ======================== */
-    .summary-box,
-    .guide,
-    .safety-guide {
+    
+    /* 修正四個卡片在手機上改為單欄排列，且高度自適應 */
+    .summary-box {
+        flex-direction: column;
+        height: auto;
+        min-height: initial;
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    /* 修正大標題在手機上過大的問題 */
+    h2 {
+        font-size: 32px;
+    }
+    
+    /* 關鍵修正：讓左右並排的區塊在手機上變成上下疊放 */
+    .guide, .safety-guide {
         flex-direction: column !important;
-        width: 95% !important;
-        margin: 20px auto !important;
-        gap: 25px;
+        width: 95%;
+        gap: 20px;
     }
-
-    .image-box,
-    .image-box_2,
-    .image-box_3,
-    .description-box {
+    
+    /* 手機上寬度全滿，避免文字或圖片被擠成細長條 */
+    .image-box, .description-box, .description-box-3, .image-box_3 {
         width: 100% !important;
-        margin: 15px auto !important;
-        padding: 15px !important;
+        margin-left: 0 !important;
+        padding: 20px !important;
     }
-
-    .image-box img,
-    .image-box_3 img {
-        height: 280px !important;
+    
+    /* 關鍵修正：解決圖片壓死文字的問題，高度改為自動或適中高度 */
+    .image-box img, .image-box_3 img {
+        height: 300px !important; 
         object-fit: cover;
+        margin-top: 10px !important;
     }
-
-    h1, h2 {
-        font-size: 28px !important;
-    }
-
-    p, li {
+    
+    /* 調整手機版字體大小，避免溢出 */
+    .description-box, p {
         font-size: 16px !important;
-        line-height: 1.8;
+    }
+    .description-box h1, .descriptions-box-2 h1, .description-box-3 h1, h1 {
+        font-size: 20px !important;
+    }
+    li {
+        font-size: 16px !important;
+        margin-left: 15px;
     }
 }
