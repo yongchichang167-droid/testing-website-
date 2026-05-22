@@ -85,24 +85,7 @@ body {
     max-width: 100%;       /* 再次限制，絕對不准大於螢幕寬度 */
     box-sizing: border-box;
 }
-@media (max-width: 768px) {
-    nav {
-        padding: 12px 4%;
-        gap: 10px;
-    }
-    .logo {
-        font-size: 28px;
-    }
-    nav ul {
-        gap: 20px;
-        font-size: 18px;
-		margin: 0 100px 0 auto; 
-    }
-    .login-btn {
-        padding: 8px 16px;
-        font-size: 16px;
-    }
-}
+
 @keyframes slideIn {
   0% {
     transform: translateY(-10px);
@@ -270,6 +253,13 @@ body{
         padding: 6px 12px;
         font-size: 14px;
         margin-right: 0px; /* 修正：原本的 -50px 會讓按鈕在手機上飛出螢幕 */
+		  margin-right: 0px !important;  /* 沒收任何會害按鈕往外噴的 margin */
+        margin-left: 0px !important;
+        padding: 8px 16px !important;  /* 稍微縮小手機版的按鈕口袋，騰出螢幕空間 */
+        
+        /* 3. 防止按鈕在窄螢幕上被文字排擠或擠壓變形 */
+        flex-shrink: 0 !important;     
+        display: flex !important;
     }
     
     /* 修正四個卡片在手機上改為單欄排列，且高度自適應 */
