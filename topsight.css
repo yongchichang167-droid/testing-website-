@@ -93,6 +93,7 @@ body {
     nav ul {
         gap: 20px;
         font-size: 18px;
+		 margin: 0 100px 0 auto; 
     }
     .login-btn {
         padding: 8px 16px;
