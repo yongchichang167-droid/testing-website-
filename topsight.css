@@ -274,7 +274,36 @@ body{
     }
 }
 
-
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 5%;
+    }
+    .logo {
+        font-size: 26px;
+    }
+    nav ul {
+        gap: 15px;
+        margin-right: 0px;
+		 margin: 0 100px 0 auto; 
+    }
+    nav a {
+        font-size: 16px;
+    }
+    .login-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+        margin-right: 0px; /* 修正：原本的 -50px 會讓按鈕在手機上飛出螢幕 */
+    }
+    
+    /* 修正四個卡片在手機上改為單欄排列，且高度自適應 */
+    .summary-box {
+        flex-direction: column;
+        height: auto;
+        min-height: initial;
+        padding: 15px;
+        gap: 20px;
+    }
+    
 
 
 
