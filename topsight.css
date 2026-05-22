@@ -235,80 +235,50 @@ body{
 	background-color: #ADD2FF;
 }
 @media (max-width: 768px) {
+    /* ===================================================
+       只在手機版生效：強制把被切掉的 Log In 按鈕拉回螢幕內
+       =================================================== */
+    
     nav {
-        padding: 10px 5%;
-    }
-    .logo {
-        font-size: 26px;
-    }
-    nav ul {
-        gap: 15px;
-        margin-right: 0px;
-		 margin: 0 100px 0 auto; 
-    }
-    nav a {
-        font-size: 16px;
-    }
-    .login-btn {
-        padding: 6px 12px;
-        font-size: 14px;
-        margin-right: 0px; /* 修正：原本的 -50px 會讓按鈕在手機上飛出螢幕 */
-		  margin-right: 0px !important;  /* 沒收任何會害按鈕往外噴的 margin */
-        margin-left: 0px !important;
-        padding: 8px 16px !important;  /* 稍微縮小手機版的按鈕口袋，騰出螢幕空間 */
-        
-        /* 3. 防止按鈕在窄螢幕上被文字排擠或擠壓變形 */
-        flex-shrink: 0 !important;     
+        padding: 10px 3% !important; /* 💡 縮小左右口袋，保留更多螢幕寬度給按鈕 */
         display: flex !important;
+        flex-wrap: wrap !important;  /* 🔥 核心魔法：如果螢幕太窄塞不下，允許選單和按鈕自動換行，絕對不准超出螢幕！ */
+        justify-content: space-between !important;
     }
-    
-    /* 修正四個卡片在手機上改為單欄排列，且高度自適應 */
-    .summary-box {
-        flex-direction: column;
-        height: auto;
-        min-height: initial;
-        padding: 15px;
-        gap: 20px;
+
+    /* 修正 Logo 大小在手機上的比例 */
+    .logo {
+        font-size: 20px !important; /* 手機版稍微精緻一點，才不會把按鈕擠走 */
     }
-    
-    /* 修正大標題在手機上過大的問題 */
-    h2 {
-        font-size: 32px;
+
+    /* 修正橫向文字選單（Home, Top Sights...） */
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px !important;        /* 🔥 關鍵：把手機版選項之間的距離縮小（原本20px改10px），省下大量寬度 */
+        margin: 0 auto 0 10px !important; /* 自動推擠，靠左對齊 */
+        padding: 0 !important;
     }
-    
-    /* 關鍵修正：讓左右並排的區塊在手機上變成上下疊放 */
-    .guide, .safety-guide {
-        flex-direction: column !important;
-        width: 95%;
-        gap: 20px;
+
+    /* 手機版的選單文字大小微調，確保按鈕有位子坐 */
+    nav a {
+        font-size: 14px !important; /* 💡 只在手機版稍微調整，讓它在 narrow 螢幕放得下 */
     }
-    
-    /* 手機上寬度全滿，避免文字或圖片被擠成細長條 */
-    .image-box, .description-box, .description-box-3, .image-box_3 {
-        width: 100% !important;
-        margin-left: 0 !important;
-        padding: 20px !important;
-    }
-    
-    /* 關鍵修正：解決圖片壓死文字的問題，高度改為自動或適中高度 */
-    .image-box img, .image-box_3 img {
-        height: 300px !important; 
-        object-fit: cover;
-        margin-top: 10px !important;
-    }
-    
-    /* 調整手機版字體大小，避免溢出 */
-    .description-box, p {
-        font-size: 16px !important;
-    }
-    .description-box h1, .descriptions-box-2 h1, .description-box-3 h1, h1 {
-        font-size: 20px !important;
-    }
-    li {
-        font-size: 16px !important;
-        margin-left: 15px;
+
+    /* 💡 徹底拯救被 cut off 的 Log In 按鈕 */
+    .login-btn, .login-btn.mobile-login {
+        margin-right: 0px !important;  /* 🔥 強制沒收任何會害它飛出去的負 margin */
+        padding: 6px 12px !important;  /* 稍微縮小按鈕口袋，讓它完美留在螢幕內 */
+        font-size: 14px !important;    /* 按鈕文字大小微調 */
+        flex-shrink: 0 !important;     /* 🔥 絕對不准縮水變形 */
+        
+        /* 這裡可以選擇保留你想要的藍底白字，或是維持原本的白底黑字 */
+        background-color: #1565C0 !important; /* 換成藍底 */
+        color: #ffffff !important;            /* 白字 */
+        border: 1px solid #ffffff !important;
     }
 }
+
 @media screen and (max-width: 768px) {
     
     nav {
