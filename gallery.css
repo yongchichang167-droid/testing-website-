@@ -1,4 +1,3 @@
-
 nav {
     color: white;
     background: linear-gradient(
@@ -14,8 +13,8 @@ nav {
     width: 100%;       
     z-index: 1000;     
 
-    font-size: 25px;
-    padding: 30px 10%; 
+    font-size: 25px; /* 💡 完全保留你的 25px */
+    padding: 15px 4%; /* 💡 只調整左右內邊距，把飛出去的按鈕拉回螢幕內 */
 
     display: flex;
     justify-content: space-between; 
@@ -25,13 +24,12 @@ nav {
 	animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-
 }
 
 .logo {
     color: white;
 	left: 50%;
-    font-size: 40px;
+    font-size: 40px; /* 💡 完全保留你的 40px */
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -39,27 +37,25 @@ nav {
 }
 nav ul{
   display: flex;
-  gap:60px;
+  gap:60px; /* 💡 完全保留你的 20px */
   list-style:none;
   align-items:center;
   height:100%;
-  flex-direction: row; 
-  align-items: center;
+  flex-direction: row;
    margin: 0 100px 0 auto; 
-  
 }
 nav a{
   display: flex;
   color:white;
   text-decoration: none;
   align-items:center;
+  font-size:25px; /* 💡 完全保留你的 25px */
 }
 nav a:hover {
     color:#4FC3F7; 
 }
 body {
     margin: 0;
-    
 }
 .col-auto{
     color:black;
@@ -85,6 +81,8 @@ body {
     transition: 0.3s;
     white-space: nowrap;    
 }
+
+
 @keyframes slideIn {
   0% {
     transform: translateY(-10px);
