@@ -25,6 +25,7 @@ nav {
     animation-duration: 1s;
     animation-timing-function: ease-out;
 }
+
 .logo {
     color: white;
 	left: 50%;
@@ -43,12 +44,12 @@ nav ul{
   flex-direction: row;
    margin: 0 100px 0 auto; 
 }
-}
 nav a{
   display: flex;
   color:white;
   text-decoration: none;
   align-items:center;
+  font-size:25px; /* 💡 完全保留你的 25px */
 }
 nav a:hover {
     color:#4FC3F7; 
