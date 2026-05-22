@@ -365,22 +365,24 @@ p{
    重新優化與擴充後的 RWD 手機版區塊 (max-width: 768px)
    ========================================== */
 @media (max-width: 768px) {
-      nav {
-        padding: 10px 3% !important; /* 從 10% 縮小到 3%，騰出更多空間 */
+    nav {
+        padding: 10px 5%;
     }
-    
+    .logo {
+        font-size: 26px;
+    }
     nav ul {
-        gap: 12px !important; /* 縮小小螢幕下的導覽選單間距 */
-        margin-right: 10px !important; 
+        gap: 15px;
+        margin-right: 0px;
     }
-
-    /* 2. 關鍵修正：把手機版按鈕的負 margin 沒收，並縮小字體 */
+    nav a {
+        font-size: 16px;
+    }
     .login-btn {
-        margin-right: 0px !important; /* 🔥 強制在手機上歸零，防止飛出螢幕或失效 */
-        padding: 6px 12px !important; /* 縮小按鈕內邊距 */
-        font-size: 14px !important;   /* 縮小手機版的按鈕字體 */
+        padding: 6px 12px;
+        font-size: 14px;
+        margin-right: 0px; /* 修正：原本的 -50px 會讓按鈕在手機上飛出螢幕 */
     }
-}
     
     /* 修正四個卡片在手機上改為單欄排列，且高度自適應 */
     .summary-box {
