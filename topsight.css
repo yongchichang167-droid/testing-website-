@@ -13,7 +13,7 @@ nav {
     left: 0;           
     width: 100%;       
     z-index: 1000;   
-	flex-wrap: wrap;
+	flex-wrap: wrap  !important;
 
     font-size: 25px;
     padding: 30px 10%; 
@@ -285,45 +285,64 @@ body{
    =================================================== */
 @media screen and (max-width: 768px) {
     /* ===================================================
-       手機版：允許自動換行，但強迫調整換行後的完美順序！
+       專屬手機版：100% 完美還原你發給我的截圖一橫排效果！
        =================================================== */
     
     nav {
-        padding: 15px 4% !important;
-        flex-wrap: wrap !important;   /* 🔥 繼續保留你想要的「允許自動換行」萬靈丹！ */
+        /* 💡 縮小左右內邊距（改成2%），把空間全部讓給中間的文字與按鈕 */
+        padding: 15px 2% !important; 
+        
         display: flex !important;
-        justify-content: space-between !important;
+        flex-direction: row !important;  /* 強制橫向一整排 */
+        flex-wrap: nowrap !important;    /* 🔥 絕對不准換行！強迫大家待在同一條水平線上 */
+        justify-content: space-between !important; /* Logo 靠最左，按鈕靠最右 */
         align-items: center !important;
     }
 
-    /* 💡 排序魔法 1：強迫 Logo 永遠當老大，固定在第一排的最左邊 */
+    /* 調整左邊 Logo 大小，寬度不夠時允許它微縮，避免把右邊按鈕推出去 */
     .logo {
-        order: 1 !important;
-        flex: 1 !important; /* 讓 Logo 佔據左側剩餘空間，把按鈕推到最右邊 */
+        font-size: 24px !important;  /* 稍微縮小 Logo 尺寸以適應手機 */
+        flex-shrink: 1 !important;   /* 允許微縮 */
         text-align: left !important;
     }
 
-    /* 💡 排序魔法 2：強迫 Log In 按鈕固定在第一排的最右邊 */
-    .login-btn {
-        order: 2 !important;
-        margin: 0 !important;
-        padding: 8px 16px !important;
-        width: auto !important; /* 防止寬度失控 */
-        flex-shrink: 0 !important;
+    /* 💡 中間的橫向文字選單（Home, Top Sights...） */
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important; /* 強制橫向排隊 */
+        flex-wrap: nowrap !important;   /* 🔥 選單內部也絕對不准換行 */
+        
+        /* 🔥 核心關鍵：縮小手機版選項之間的大空隙（原本40px太寬了，改成8px），
+           字跟字只要稍微緊湊一點，右邊的 Log In 按鈕就會一秒被吸回螢幕內！ */
+        gap: 8px !important;         
+        
+        /* 讓選單自動靠右推，但右邊跟 Log In 按鈕保持 15px 的安全不撞車距離 */
+        margin: 0 15px 0 auto !important; 
+        padding: 0 !important;
+        flex-shrink: 1 !important;      /* 允許選單在極端窄螢幕下微微收縮 */
     }
 
-    /* 💡 排序魔法 3：當寬度真的不夠時，強迫橫向文字選單「自己」掉到第二排，絕對不影響第一排 */
-    nav ul {
-        order: 3 !important;        /* 🔥 順序排最後，換行時會自己乖乖掉到下方第二排 */
-        width: 100% !important;     /* 🔥 寬度佔滿 100%，強迫它在第二排完美置中 */
-        display: flex !important;
-        justify-content: center !important; /* 在第二排漂亮居中 */
-        gap: 15px !important;       /* 稍微縮小手機版的選項間距，防止二次爆開 */
-        margin: 12px 0 0 0 !important; /* 與第一排的 Logo/按鈕保持 12px 的舒適上方距離 */
-        padding: 0 !important;
-        flex-shrink: 1 !important;
+    /* 橫向選單的文字大小調整 */
+    nav a {
+        font-size: 13px !important;    /* 手機版文字稍稍變小，確保能像截圖一樣完美並排 */
+        white-space: nowrap !important; /* 🔥 絕對不准文字自己上下斷行（如 Top 在上 Sights 在下） */
+    }
+
+    /* 💡 右邊的 Log In 按鈕 */
+    .login-btn {
+        margin: 0 !important;          /* 徹底沒收任何負 margin */
+        padding: 6px 12px !important;  /* 稍微縮小按鈕的口袋寬度，騰出手機螢幕空間 */
+        font-size: 13px !important;    /* 按鈕文字大小調整 */
+        white-space: nowrap !important; /* 確保 Log in 兩個字在一橫排 */
+        flex-shrink: 0 !important;     /* 🔥 絕對不准縮水變形或被切掉 */
+        
+        /* 保持原本的白底黑字精緻質感 */
+        background-color: #ffffff !important; 
+        color: #000000 !important;              
     }
 }
+
+
 
 @media (max-width: 768px) {
     nav {
