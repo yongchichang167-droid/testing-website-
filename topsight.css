@@ -12,7 +12,8 @@ nav {
     top: 0;
     left: 0;           
     width: 100%;       
-    z-index: 1000;     
+    z-index: 1000;   
+	flex-wrap: wrap;
 
     font-size: 25px;
     padding: 30px 10%; 
@@ -279,38 +280,32 @@ body{
     }
 }
 
+/* ===================================================
+   專屬手機版區塊：解除限制，允許導覽列遇到窄螢幕時自動換行
+   =================================================== */
 @media screen and (max-width: 768px) {
     
     nav {
-        padding: 10px 4% !important; /* 保持手機版微縮留白 */
-        display: flex !important;
-        justify-content: space-between !important; /* 強制左右元素彈開到兩側 */
-    }
-    
-    /* 💡 核心修正：縮小選單的寬度，並用 margin-right 主動把 Log In 按鈕往右邊推開 */
-    nav ul {
-        display: flex !important;
-        gap: 10px !important;         /* 稍微縮小文字選項之間的間距，騰出空間 */
-        margin-right: 20px !important; /* 🔥 關鍵：用正的 margin 把右邊的登入按鈕強行推開 20px，防止太接近 */
-        padding: 0 !important;
-		 margin: 0 100px 0 auto; 
+        padding: 15px 4% !important;  /* 💡 縮小手機版的左右留白，騰出空間 */
+        flex-wrap: wrap !important;   /* 🔥 核心修復：強制允許導覽列在手機上可以「自動換行」！ */
+        justify-content: space-between !important;
     }
 
-    /* 確保手機版的文字和登入按鈕不會貼在一起 */
-    .login-btn.mobile-login {
-        margin-right: 0px !important;  
-        padding: 6px 12px !important;  
-        font-size: 14px !important;    
-        flex-shrink: 0 !important;     /* 🔥 防止按鈕在小螢幕上被文字擠壓到變形 */
+    /* 💡 核心修復：把原本阻礙換行的限制解除 */
+    nav ul {
+        flex-shrink: 1 !important;    /* 🔥 改為 1，允許文字選單在緊要關頭時可以縮小讓位 */
+        gap: 15px !important;         /* 稍微縮小手機版的選項間距（原本40px太寬了） */
+        margin: 10px auto 0 auto !important; /* 🔥 換行後的魔術排版：如果被擠到第二行，會自動漂亮置中 */
+        justify-content: center !important;
+    }
+
+    /* 確保手機版的 Log In 按鈕乖乖待在螢幕裡 */
+    .login-btn {
+        margin: 10px auto 0 auto !important; /* 如果被擠到下一行，也自動精確置中 */
+        max-width: 180px !important;         /* 限制手機版按鈕不要肥大到佔滿 100% */
+        padding: 8px 16px !important;
     }
 }
-
-
-
-
-
-
-
 
 
 
