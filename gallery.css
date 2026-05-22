@@ -99,6 +99,13 @@ body {
     background-size: cover;      
     background-position: center;
     background-attachment: scroll; 
+    background-repeat: no-repeat;
+	position: relative;
+    box-sizing: border-box;
+	height: 100dvh !important; 
+    
+    position: relative;
+    box-sizing: border-box;
     
     height: 100vh;               
     width: 25%;
