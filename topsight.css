@@ -284,37 +284,42 @@ body{
    專屬手機版區塊：解除限制，允許導覽列遇到窄螢幕時自動換行
    =================================================== */
 @media screen and (max-width: 768px) {
-    
+    /* ==========================================
+       專屬手機版：縮小字體與間距，讓大家擠在同一排，Logo 就不會跑到上面了
+       ========================================== */
+
     nav {
-        padding: 15px 4% !important;  /* 💡 縮小手機版的左右留白，騰出空間 */
-        flex-wrap: wrap !important;   /* 🔥 核心修復：強制允許導覽列在手機上可以「自動換行」！ */
-        justify-content: space-between !important;
+        padding: 10px 4% !important; /* 縮減上下與左右留白，省出空間 */
     }
 
-    /* 💡 核心修復：把原本阻礙換行的限制解除 */
+    /* 💡 核心修復 1：把手機版的 Logo 稍微變小精緻，騰出右邊位置 */
+    .logo {
+        font-size: 24px !important;  /* 🔥 從 40px 降到 24px（只在手機版） */
+        left: 0 !important;          /* 確保不會奇怪的向右偏心 */
+    }
+
+    /* 💡 核心修復 2：大幅縮減選單在手機上的大空隙 */
     nav ul {
-        flex-shrink: 1 !important;    /* 🔥 改為 1，允許文字選單在緊要關頭時可以縮小讓位 */
-        gap: 15px !important;         /* 稍微縮小手機版的選項間距（原本40px太寬了） */
-        margin: 10px auto 0 auto !important; /* 🔥 換行後的魔術排版：如果被擠到第二行，會自動漂亮置中 */
-        justify-content: center !important;
+        gap: 12px !important;        /* 🔥 原本 40px 太寬了，手機版改成 12px 才能並排 */
+        margin: 0 15px 0 auto !important; /* 🔥 讓選單維持在第一排靠右，不要掉下去第二行 */
+        flex-shrink: 1 !important;   /* 允許選單在緊要關頭微微縮小 */
     }
 
-    /* 確保手機版的 Log In 按鈕乖乖待在螢幕裡 */
+    /* 💡 核心修復 3：把手機版的選單文字也縮小，大家都待在第一排 */
+    nav a {
+        font-size: 15px !important;  /* 🔥 從 25px 降到 15px（只在手機版） */
+    }
+
+    /* 💡 核心修復 4：按鈕也變小巧，完美收納在第一排最右側 */
     .login-btn {
-        margin: 10px auto 0 auto !important; /* 如果被擠到下一行，也自動精確置中 */
-        max-width: 180px !important;         /* 限制手機版按鈕不要肥大到佔滿 100% */
-        padding: 8px 16px !important;
+        margin: 0 !important;
+        padding: 6px 12px !important;
+        font-size: 14px !important;  /* 🔥 按鈕字體改小 */
+        width: auto !important;      /* 取消 100% 寬度，防止它自己佔領一整行 */
+        max-width: initial !important;
+        flex-shrink: 0 !important;   /* 絕對不准縮水變形 */
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 
