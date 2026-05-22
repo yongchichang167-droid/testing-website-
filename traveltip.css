@@ -40,7 +40,8 @@ nav ul{
   align-items:center;
   height:100%;
   flex-direction: row;
-	margin-right:30px;
+  margin: 0 40px 0 auto;
+  flex-shrink: 0; 
 }
 nav a{
   display: flex;
@@ -65,7 +66,7 @@ body {
     border-radius: 25px;         
     text-decoration: none;
     font-weight: bold;
-	margin-right:-50px;
+	margin: 0 !important;
     
     display: flex;         
     justify-content: center;  
@@ -682,66 +683,6 @@ body {
 .reveal-card:hover .card-cover-front { clip-path: circle(0% at 50% 50%); }
 .reveal-card:hover .card-cover-front h3 { opacity: 0; transition: opacity 0.6s ease-in-out !important; }
 
-/* ==========================================
-   新增與合併 RWD 手機版區塊 (max-width: 768px)
-   ========================================== */
-@media (max-width: 768px) {
-    /* 1. 讓安全指南區塊變為上下排列 */
-    .safety-guide {
-        flex-direction: column !important; /* 強制改為由上到下 */
-        width: 95%;
-        gap: 20px;
-        padding: 10px;
-    }
-    .image-box_3 {
-        width: 100% !important; /* 寬度佔滿 */
-    }
-    .image-box_3 img {
-        height: 350px !important; /* 手機上圖片縮小高度，避免過大 */
-        margin-top: 20px;
-    }
-
-    /* 2. 讓浮動卡片區塊（floating-cards）在手機版變單欄上下排列 */
-    .floating-cards {
-        flex-direction: column;
-        width: 95%;
-        gap: 20px;
-    }
-    .card {
-        width: 100%;
-        min-height: initial; /* 取消最小高度限制，改由內容撐開 */
-        padding: 25px 15px;
-    }
-    h4 {
-        font-size: 28px; /* 手機上卡片標題縮小 */
-    }
-
-    /* 3. 關鍵修復：翻轉卡片（flex-container / reveal-card）在手機上的寬度 */
-    .flex-container {
-        padding: 30px 5%; /* 減少外距空間 */
-        gap: 20px;
-    }
-    .reveal-card {
-        width: 100% !important; /* 手機上直接佔滿 100% 寬度，不跟別人擠 */
-        max-width: 100%;
-        height: 380px; /* 稍微縮小一點卡片高度適合閱讀 */
-    }
-    .card-content-back {
-        padding: 20px; /* 縮小內邊距以容納文字 */
-    }
-    .card-content-back h3 {
-        font-size: 20px;
-    }
-    .card-content-back li {
-        font-size: 16px;
-    }
-    
-    /* 4. 按鈕微調 */
-    .detail-btn {
-        font-size: 20px;
-        padding: 10px;
-    }
-}
 @media screen and (max-width: 768px) {
     
     nav {
