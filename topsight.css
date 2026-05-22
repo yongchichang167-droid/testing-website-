@@ -258,8 +258,10 @@ body{
         flex-direction: row !important;
         gap: 12px !important;                   /* 間距縮小 */
         margin: 0 !important;
-        padding: 0 !important;
         flex-wrap: nowrap !important;
+		margin: 0 40px 0 auto !important; 
+		padding: 0 !important;
+        flex-shrink: 1 !important;
     }
 
     nav a {
