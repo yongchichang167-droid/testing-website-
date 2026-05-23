@@ -13,8 +13,8 @@ nav {
     width: 100%;       
     z-index: 1000;     
 
-    font-size: 25px; /* 💡 完全保留你的 25px */
-    padding: 15px 4%; /* 💡 只調整左右內邊距，把飛出去的按鈕拉回螢幕內 */
+    font-size: 25px; /* ðŸ’¡ å®Œå…¨ä¿ç•™ä½ çš„ 25px */
+    padding: 15px 4%; /* ðŸ’¡ åªèª¿æ•´å·¦å³å…§é‚Šè·ï¼ŒæŠŠé£›å‡ºåŽ»çš„æŒ‰éˆ•æ‹‰å›žèž¢å¹•å…§ */
 
     display: flex;
     justify-content: space-between; 
@@ -29,7 +29,7 @@ nav {
 .logo {
     color: white;
 	left: 50%;
-    font-size: 40px; /* 💡 完全保留你的 40px */
+    font-size: 40px; /* ðŸ’¡ å®Œå…¨ä¿ç•™ä½ çš„ 40px */
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -37,19 +37,19 @@ nav {
 }
 nav ul{
   display: flex;
-  gap:60px; /* 💡 完全保留你的 20px */
+  gap:60px; /* ðŸ’¡ å®Œå…¨ä¿ç•™ä½ çš„ 20px */
   list-style:none;
   align-items:center;
   height:100%;
   flex-direction: row;
-   margin: 0 100px 0 auto; 
+  margin: 0 100px 0 auto; 
 }
 nav a{
   display: flex;
   color:white;
   text-decoration: none;
   align-items:center;
-  font-size:25px; /* 💡 完全保留你的 25px */
+  font-size:25px; /* ðŸ’¡ å®Œå…¨ä¿ç•™ä½ çš„ 25px */
 }
 nav a:hover {
     color:#4FC3F7; 
@@ -67,11 +67,11 @@ body {
     border-radius: 25px;         
     text-decoration: none;
     font-weight: bold;
-	width: 100%;           /* 隨手機螢幕寬度自動伸縮 */
-    max-width: 100%;       /* 再次限制，絕對不准大於螢幕寬度 */
+	width: 100%;           /* éš¨æ‰‹æ©Ÿèž¢å¹•å¯¬åº¦è‡ªå‹•ä¼¸ç¸® */
+    max-width: 100%;       /* å†æ¬¡é™åˆ¶ï¼Œçµ•å°ä¸å‡†å¤§æ–¼èž¢å¹•å¯¬åº¦ */
     box-sizing: border-box;
 	
-    /* 💡 核心修復：取消原本的 -50px，改為 0px，按鈕就不會往外噴了 */
+    /* ðŸ’¡ æ ¸å¿ƒä¿®å¾©ï¼šå–æ¶ˆåŽŸæœ¬çš„ -50pxï¼Œæ”¹ç‚º 0pxï¼ŒæŒ‰éˆ•å°±ä¸æœƒå¾€å¤–å™´äº† */
     margin-right: 0px !important; 
     
     display: flex;         
@@ -227,26 +227,26 @@ span{
 @media screen and (max-width: 768px) {
     
     nav {
-        padding: 10px 4% !important; /* 保持手機版微縮留白 */
+        padding: 10px 4% !important; /* ä¿æŒæ‰‹æ©Ÿç‰ˆå¾®ç¸®ç•™ç™½ */
         display: flex !important;
-        justify-content: space-between !important; /* 強制左右元素彈開到兩側 */
+        justify-content: space-between !important; /* å¼·åˆ¶å·¦å³å…ƒç´ å½ˆé–‹åˆ°å…©å´ */
     }
     
-    /* 💡 核心修正：縮小選單的寬度，並用 margin-right 主動把 Log In 按鈕往右邊推開 */
+    /* ðŸ’¡ æ ¸å¿ƒä¿®æ­£ï¼šç¸®å°é¸å–®çš„å¯¬åº¦ï¼Œä¸¦ç”¨ margin-right ä¸»å‹•æŠŠ Log In æŒ‰éˆ•å¾€å³é‚ŠæŽ¨é–‹ */
     nav ul {
         display: flex !important;
-        gap: 10px !important;         /* 稍微縮小文字選項之間的間距，騰出空間 */
-        margin-right: 20px !important; /* 🔥 關鍵：用正的 margin 把右邊的登入按鈕強行推開 20px，防止太接近 */
+        gap: 10px !important;         /* ç¨å¾®ç¸®å°æ–‡å­—é¸é …ä¹‹é–“çš„é–“è·ï¼Œé¨°å‡ºç©ºé–“ */
+        margin-right: 20px !important; /* ðŸ”¥ é—œéµï¼šç”¨æ­£çš„ margin æŠŠå³é‚Šçš„ç™»å…¥æŒ‰éˆ•å¼·è¡ŒæŽ¨é–‹ 20pxï¼Œé˜²æ­¢å¤ªæŽ¥è¿‘ */
         padding: 0 !important;
 		 margin: 0 100px 0 auto; 
     }
 
-    /* 確保手機版的文字和登入按鈕不會貼在一起 */
+    /* ç¢ºä¿æ‰‹æ©Ÿç‰ˆçš„æ–‡å­—å’Œç™»å…¥æŒ‰éˆ•ä¸æœƒè²¼åœ¨ä¸€èµ· */
     .login-btn.mobile-login {
         margin-right: 0px !important;  
         padding: 6px 12px !important;  
         font-size: 14px !important;    
-        flex-shrink: 0 !important;     /* 🔥 防止按鈕在小螢幕上被文字擠壓到變形 */
+        flex-shrink: 0 !important;     /* ðŸ”¥ é˜²æ­¢æŒ‰éˆ•åœ¨å°èž¢å¹•ä¸Šè¢«æ–‡å­—æ“ å£“åˆ°è®Šå½¢ */
     }
 }
 @media (max-width: 768px) {
@@ -267,10 +267,10 @@ span{
     .login-btn {
         padding: 6px 12px;
         font-size: 14px;
-        margin-right: 0px; /* 修正：原本的 -50px 會讓按鈕在手機上飛出螢幕 */
+        margin-right: 0px; /* ä¿®æ­£ï¼šåŽŸæœ¬çš„ -50px æœƒè®“æŒ‰éˆ•åœ¨æ‰‹æ©Ÿä¸Šé£›å‡ºèž¢å¹• */
     }
     
-    /* 修正四個卡片在手機上改為單欄排列，且高度自適應 */
+    /* ä¿®æ­£å››å€‹å¡ç‰‡åœ¨æ‰‹æ©Ÿä¸Šæ”¹ç‚ºå–®æ¬„æŽ’åˆ—ï¼Œä¸”é«˜åº¦è‡ªé©æ‡‰ */
     .summary-box {
         flex-direction: column;
         height: auto;
@@ -279,33 +279,32 @@ span{
         gap: 20px;
     }
     
-    /* 修正大標題在手機上過大的問題 */
+   
     h2 {
         font-size: 32px;
     }
     
-    /* 關鍵修正：讓左右並排的區塊在手機上變成上下疊放 */
+   
     .guide, .safety-guide {
         flex-direction: column !important;
         width: 95%;
         gap: 20px;
     }
     
-    /* 手機上寬度全滿，避免文字或圖片被擠成細長條 */
+    
     .image-box, .description-box, .description-box-3, .image-box_3 {
         width: 100% !important;
         margin-left: 0 !important;
         padding: 20px !important;
     }
     
-    /* 關鍵修正：解決圖片壓死文字的問題，高度改為自動或適中高度 */
+    
     .image-box img, .image-box_3 img {
         height: 300px !important; 
         object-fit: cover;
         margin-top: 10px !important;
     }
     
-    /* 調整手機版字體大小，避免溢出 */
     .description-box, p {
         font-size: 16px !important;
     }
@@ -315,5 +314,20 @@ span{
     li {
         font-size: 16px !important;
         margin-left: 15px;
+    }
+    .interactive-track {
+        height: 100vh !important;
+        width: 400% !important;
+    }
+
+    .hero-1, .hero-2, .hero-3, .hero-4 {
+        width: 25% !important;          /* 保持 25% 才能讓 4 張圖片正常滑動 */
+        height: 100vh !important;
+        flex-shrink: 0 !important;
+    }
+
+    .hero-1, .hero-2, .hero-3, .hero-4 {
+        background-size: cover !important;
+        background-position: center !important;
     }
 }
