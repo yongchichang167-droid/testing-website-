@@ -6,25 +6,28 @@ nav {
         rgba(21, 101, 192, 0.6),
         rgba(21, 101, 192, 0)
     );
+
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    font-size: 25px;
-    padding: 15px 4%;
+    left: 0;           
+    width: 100%;       
+    z-index: 1000;     
+
+    font-size: 25px; 
+    padding: 15px 4%; 
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-box-sizing: border-box;
-    z-index: 9999;
-animation-name: slideIn;
+    justify-content: space-between; 
+    align-items: center;  
+	box-sizing: border-box; 
+    z-index: 9999; 
+	animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
 }
+ㄦ
 .logo {
     color: white;
-left: 50%;
+	left: 50%;
     font-size: 40px; 
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
@@ -38,17 +41,17 @@ nav ul{
   align-items:center;
   height:100%;
   flex-direction: row;
-  margin: 0 100px 0 auto;
+  margin: 0 100px 0 auto; 
 }
 nav a{
   display: flex;
   color:white;
   text-decoration: none;
   align-items:center;
-  font-size:25px;
+  font-size:25px; 
 }
 nav a:hover {
-    color:#4FC3F7;
+    color:#4FC3F7; 
 }
 body {
     margin: 0;
@@ -57,25 +60,28 @@ body {
     color:black;
 }
 .login-btn {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 10px 20px;
-    border-radius: 25px;
+    background-color: #ffffff; 
+    color: #000000;              
+    padding: 10px 20px;      
+    border-radius: 25px;         
     text-decoration: none;
     font-weight: bold;
-width: 100%; 
-    max-width: 100%; 
+	width: 100%;           
+    max-width: 100%;       
     box-sizing: border-box;
-  
-    margin-right: 0px !important;
-   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
+	
+    
+    margin-right: 0px !important; 
+    
+    display: flex;         
+    justify-content: center;  
+    align-items: center;    
+    
     transition: 0.3s;
-    white-space: nowrap;
+    white-space: nowrap;    
 }
+
+
 @keyframes slideIn {
   0% {
     transform: translateY(-10px);
@@ -89,25 +95,25 @@ width: 100%;
 }
 .hero-1{
     background-image: url('image/drink.image.png');
-    background-size: cover;
+    background-size: cover;      
     background-position: center;
-    background-attachment: scroll;
+    background-attachment: scroll; 
     background-repeat: no-repeat;
-position: relative;
+	position: relative;
     box-sizing: border-box;
-height: 100dvh !important;
-   
+	height: 100dvh !important; 
+    
     position: relative;
     box-sizing: border-box;
-   
-    height: 100vh;
+    
+    height: 100vh;               
     width: 25%;
- 
+  
     display:flex;
-    justify-content: center;
-    align-items: center;
-   
-    margin-top: 0;
+    justify-content: center;    
+    align-items: center;       
+    
+    margin-top: 0;  
 }
 .overlay {
     text-align: center;
@@ -126,6 +132,7 @@ h1{
   font-weight: 300;
   font-style: normal;
   font-size:130px;
+
 }
 p{
   font-family: "Marck Script", cursive;
@@ -145,9 +152,9 @@ span{
 }
 .pre-btn, .next-btn{
   padding:30px 30px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute; 
+  top: 50%;  
+  transform: translateY(-50%); 
   background:rgba(255, 255, 255, 0.5);
   border:none;
   border-radius: 50px;
@@ -171,100 +178,99 @@ span{
 }
 .hero-2{
   background-image: url('image/blue.drink.png');
-  background-size: cover;
+  background-size: cover;      
   background-position: center;
-  background-attachment: scroll;
-   
-  height: 100vh;
+  background-attachment: scroll; 
+    
+  height: 100vh;               
   width: 25%;
- 
+  
   display:flex;
-  justify-content: center;
-  align-items: center;
-   
-  margin-top: 0;
+  justify-content: center;    
+  align-items: center;       
+    
+  margin-top: 0;   
 }
 .hero-3{
   background-image: url('image/blue.milkshake.png');
   width:25%;
-  background-size: cover;
+  background-size: cover;      
   background-position: center;
-  background-attachment: scroll;
-   
-  height: 100vh;
- 
+  background-attachment: scroll; 
+    
+  height: 100vh;         
+  
   display:flex;
-  justify-content: center;
-  align-items:center;
-  margin-top: 0;
-  content-visibility: auto;
+  justify-content: center; 
+  align-items:center;   
+
+  margin-top: 0;   
+  content-visibility: auto; 
 }
 .hero-4{
   background-image: url('image/blue_macarons.png');
   width:25%;
-  background-size: cover;
+  background-size: cover;      
   background-position: center;
-  background-attachment: scroll;
-   
-  height: 100vh;
- 
+  background-attachment: scroll; 
+    
+  height: 100vh;         
+  
   display:flex;
-  justify-content: center;
-  align-items: center;
-   
-  margin-top: 0;
-  content-visibility: auto;
-}
-@media screen and (max-width: 768px) {
-   
-    nav {
-        padding: 10px 4% !important; /* ä¿æŒæ‰‹æ©Ÿç‰ˆå¾®ç¸®ç•™ç™½ */
-        display: flex !important;
-        justify-content: space-between !important; /* å¼·åˆ¶å·¦å³å…ƒç´ å½ˆé–‹åˆ°å…©å´ */
-    }
-   
-    /* ðŸ’¡ æ ¸å¿ƒä¿®æ­£ï¼šç¸®å°é¸å–®çš„å¯¬åº¦ï¼Œä¸¦ç”¨ margin-right ä¸»å‹•æŠŠ Log In æŒ‰éˆ•å¾€å³é‚ŠæŽ¨é–‹ */
-    nav ul {
-        display: flex !important;
-        gap: 10px !important; /* ç¨å¾®ç¸®å°æ–‡å­—é¸é …ä¹‹é–“çš„é–“è·ï¼Œé¨°å‡ºç©ºé–“ */
-        margin-right: 20px !important; /* ðŸ”¥ é—œéµï¼šç”¨æ­£çš„ margin æŠŠå³é‚Šçš„ç™»å…¥æŒ‰éˆ•å¼·è¡ŒæŽ¨é–‹ 20pxï¼Œé˜²æ­¢å¤ªæŽ¥è¿‘ */
-        padding: 0 !important;
- margin: 0 100px 0 auto;
-    }
-   
-    .login-btn.mobile-login {
-        margin-right: 0px !important;
-        padding: 6px 12px !important;
-        font-size: 14px !important;
-        flex-shrink: 0 !important; 
-    }
+  justify-content: center;    
+  align-items: center;       
+    
+  margin-top: 0; 
+  content-visibility: auto; 
 }
 @media (max-width: 768px) {
-    .interactive-gallery,
+
+    /* 最外層容器：負責鎖定只有一個螢幕大小，並切除超出範圍的圖片 */
+    .interactive-gallery {
+        height: 100vh !important;
+        min-height: 100vh !important;
+        width: 100vw !important; /* 改為 100vw，確保是視窗滿寬 */
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important; /* 關鍵：隱藏另外 3 張圖 */
+        position: relative !important;
+    }
+
+    /* 內層移動軌道：總長度必須是 400%（因為有 4 張圖排成一列） */
     .interactive-track {
         height: 100vh !important;
         min-height: 100vh !important;
-        width: 100% !important;
+        width: 400% !important; /* 關鍵修改：改成 400% 讓 4 張圖有足夠空間橫向排列 */
         margin: 0 !important;
         padding: 0 !important;
-        overflow: hidden !important;
+        display: flex !important; /* 確保子元素橫向並排 */
     }
-   
+
+    /* 每一張圖片區塊 */
     .hero-1,
     .hero-2,
     .hero-3,
     .hero-4 {
-        width: 25% !important;
+        /* 
+           關鍵修改：因為父層 .interactive-track 是 400%，
+           這裡的 25% 代表的是父層的四分之一（400% * 25% = 100% 螢幕寬）。
+           這樣每一張圖就會剛好「佔滿一個螢幕」。
+        */
+        width: 25% !important;          
         height: 100vh !important;
         min-height: 100vh !important;
-        flex-shrink: 0 !important;
+        flex-shrink: 0 !important; /* 防止被 flex 壓縮壓縮變形 */
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
+
+    /* 左右切換按鈕 */
     .pre-btn, .next-btn {
         top: 50% !important;
         transform: translateY(-50%) !important;
-        z-index: 10 !important;
+        z-index: 20 !important;
     }
 }
