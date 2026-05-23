@@ -225,26 +225,41 @@ span{
 }
 @media (max-width: 768px) {
 
-    .interactive-gallery,
+    /* 最外層容器：負責鎖定只有一個螢幕大小，並切除超出範圍的圖片 */
+    .interactive-gallery {
+        height: 100vh !important;
+        min-height: 100vh !important;
+        width: 100vw !important; /* 改為 100vw，確保是視窗滿寬 */
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important; /* 關鍵：隱藏另外 3 張圖 */
+        position: relative !important;
+    }
+
+    /* 內層移動軌道：總長度必須是 400%（因為有 4 張圖排成一列） */
     .interactive-track {
         height: 100vh !important;
         min-height: 100vh !important;
-        width: 100% !important;
+        width: 400% !important; /* 關鍵修改：改成 400% 讓 4 張圖有足夠空間橫向排列 */
         margin: 0 !important;
         padding: 0 !important;
-        overflow: hidden !important;
-        display: flex !important;
+        display: flex !important; /* 確保子元素橫向並排 */
     }
 
-
+    /* 每一張圖片區塊 */
     .hero-1,
     .hero-2,
     .hero-3,
     .hero-4 {
+        /* 
+           關鍵修改：因為父層 .interactive-track 是 400%，
+           這裡的 25% 代表的是父層的四分之一（400% * 25% = 100% 螢幕寬）。
+           這樣每一張圖就會剛好「佔滿一個螢幕」。
+        */
         width: 25% !important;          
         height: 100vh !important;
         min-height: 100vh !important;
-        flex-shrink: 0 !important;
+        flex-shrink: 0 !important; /* 防止被 flex 壓縮壓縮變形 */
         background-size: cover !important;
         background-position: center !important;
         background-repeat: no-repeat !important;
@@ -252,7 +267,7 @@ span{
         padding: 0 !important;
     }
 
- 
+    /* 左右切換按鈕 */
     .pre-btn, .next-btn {
         top: 50% !important;
         transform: translateY(-50%) !important;
