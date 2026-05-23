@@ -6,11 +6,47 @@
 
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
-        </style>
+       
 		 <link rel="preconnect" href="https://googleapis.com">
 		<link rel="preconnect" href="https://gstatic.com" crossorigin>
 		<link href="https://googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
+		 @media screen and (max-width: 768px) {
+            div.interactive-gallery {
+                width: 100vw !important;
+                height: 100vh !important;
+                min-height: 100vh !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
+                position: relative !important;
+                display: block !important;
+            }
+
+            div#track.interactive-track {
+                width: 400% !important;
+                height: 100vh !important;
+                min-height: 100vh !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: flex !important;
+                flex-direction: row !important;
+            }
+
+            div#track.interactive-track > div[class^="hero-"] {
+                width: 25% !important;
+                max-width: 25% !important;
+                height: 100vh !important;
+                min-height: 100vh !important;
+                flex-shrink: 0 !important;
+                background-size: cover !important;
+                background-position: center !important;
+                background-repeat: no-repeat !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+		</style>
     </head>
 <body>
    <nav>
