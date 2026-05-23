@@ -25,7 +25,7 @@ nav {
     animation-duration: 1s;
     animation-timing-function: ease-out;
 }
-
+ㄦ
 .logo {
     color: white;
 	left: 50%;
@@ -250,84 +250,32 @@ span{
     }
 }
 @media (max-width: 768px) {
-    nav {
-        padding: 10px 5%;
-    }
-    .logo {
-        font-size: 26px;
-    }
-    nav ul {
-        gap: 15px;
-        margin-right: 0px;
-		 margin: 0 100px 0 auto; 
-    }
-    nav a {
-        font-size: 16px;
-    }
-    .login-btn {
-        padding: 6px 12px;
-        font-size: 14px;
-        margin-right: 0px; /* ä¿®æ­£ï¼šåŽŸæœ¬çš„ -50px æœƒè®“æŒ‰éˆ•åœ¨æ‰‹æ©Ÿä¸Šé£›å‡ºèž¢å¹• */
-    }
-    
-    /* ä¿®æ­£å››å€‹å¡ç‰‡åœ¨æ‰‹æ©Ÿä¸Šæ”¹ç‚ºå–®æ¬„æŽ’åˆ—ï¼Œä¸”é«˜åº¦è‡ªé©æ‡‰ */
-    .summary-box {
-        flex-direction: column;
-        height: auto;
-        min-height: initial;
-        padding: 15px;
-        gap: 20px;
-    }
-    
-   
-    h2 {
-        font-size: 32px;
-    }
-    
-   
-    .guide, .safety-guide {
-        flex-direction: column !important;
-        width: 95%;
-        gap: 20px;
-    }
-    
-    
-    .image-box, .description-box, .description-box-3, .image-box_3 {
-        width: 100% !important;
-        margin-left: 0 !important;
-        padding: 20px !important;
-    }
-    
-    
-    .image-box img, .image-box_3 img {
-        height: 300px !important; 
-        object-fit: cover;
-        margin-top: 10px !important;
-    }
-    
-    .description-box, p {
-        font-size: 16px !important;
-    }
-    .description-box h1, .descriptions-box-2 h1, .description-box-3 h1, h1 {
-        font-size: 20px !important;
-    }
-    li {
-        font-size: 16px !important;
-        margin-left: 15px;
-    }
+
+    .interactive-gallery,
     .interactive-track {
         height: 100vh !important;
-        width: 400% !important;
+        min-height: 100vh !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
     }
-
-    .hero-1, .hero-2, .hero-3, .hero-4 {
-        width: 25% !important;          /* 保持 25% 才能讓 4 張圖片正常滑動 */
+    
+    .hero-1,
+    .hero-2,
+    .hero-3,
+    .hero-4 {
+        width: 25% !important;        
         height: 100vh !important;
+        min-height: 100vh !important;
         flex-shrink: 0 !important;
-    }
-
-    .hero-1, .hero-2, .hero-3, .hero-4 {
         background-size: cover !important;
         background-position: center !important;
+        background-repeat: no-repeat !important;
     }
-}
+
+    .pre-btn, .next-btn {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 10 !important;
+    }
