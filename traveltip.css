@@ -13,8 +13,8 @@ nav {
     width: 100%;       
     z-index: 1000;     
 
-    font-size: 25px; 
-    padding: 15px 4%; 
+    font-size: 25px; /* 💡 完全保留你的 25px */
+    padding: 15px 4%; /* 💡 只調整左右內邊距，把飛出去的按鈕拉回螢幕內 */
 
     display: flex;
     justify-content: space-between; 
@@ -29,7 +29,7 @@ nav {
 .logo {
     color: white;
 	left: 50%;
-    font-size: 40px; 
+    font-size: 40px; /* 💡 完全保留你的 40px */
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -37,7 +37,7 @@ nav {
 }
 nav ul{
   display: flex;
-  gap:20px; 
+  gap:20px; /* 💡 完全保留你的 20px */
   list-style:none;
   align-items:center;
   height:100%;
@@ -49,7 +49,7 @@ nav a{
   color:white;
   text-decoration: none;
   align-items:center;
-  font-size:25px; /* ðŸ’¡ å®Œå…¨ä¿ç•™ä½ çš„ 25px */
+  font-size:25px; /* 💡 完全保留你的 25px */
 }
 nav a:hover {
     color:#4FC3F7; 
@@ -67,11 +67,11 @@ body {
     border-radius: 25px;         
     text-decoration: none;
     font-weight: bold;
-	width: 100%;           /* éš¨æ‰‹æ©Ÿèž¢å¹•å¯¬åº¦è‡ªå‹•ä¼¸ç¸® */
-    max-width: 100%;       /* å†æ¬¡é™åˆ¶ï¼Œçµ•å°ä¸å‡†å¤§æ–¼èž¢å¹•å¯¬åº¦ */
+	width: 100%;           /* 隨手機螢幕寬度自動伸縮 */
+    max-width: 100%;       /* 再次限制，絕對不准大於螢幕寬度 */
     box-sizing: border-box;
 	
-    /* ðŸ’¡ æ ¸å¿ƒä¿®å¾©ï¼šå–æ¶ˆåŽŸæœ¬çš„ -50pxï¼Œæ”¹ç‚º 0pxï¼ŒæŒ‰éˆ•å°±ä¸æœƒå¾€å¤–å™´äº† */
+    /* 💡 核心修復：取消原本的 -50px，改為 0px，按鈕就不會往外噴了 */
     margin-right: 0px !important; 
     
     display: flex;         
@@ -126,7 +126,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  background-color: whitesmoke;
+  
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -166,7 +166,7 @@ h2 {
     justify-content: center;
     margin: auto;
     width: 90%;
-    gap: 5%;  /* ä¿®æ­£ï¼šä½¿ç”¨ç™¾åˆ†æ¯” gap é¿å…å¤§èž¢å¹•çˆ†é–‹ */
+    gap: 5%;  /* 修正：使用百分比 gap 避免大螢幕爆開 */
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -176,7 +176,7 @@ h2 {
 }
 .image-box img {
     width: 100%;
-    height: 1000px; /* ä¿®æ­£ï¼šç¸®å°ç¶²é ç«¯é è¨­é«˜åº¦ï¼Œé¿å…éŽé•· */
+    height: 1000px; /* 修正：縮小網頁端預設高度，避免過長 */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     object-fit: cover;
@@ -196,7 +196,7 @@ h2 {
 .description-box h1{
 	color: #0F2D5C;
     font-size: 25px;
-    height: auto; /* ä¿®æ­£ï¼šä¸è¦é™åˆ¶æ­»é«˜åº¦ */
+    height: auto; /* 修正：不要限制死高度 */
     min-height: 40px;
     justify-content:center;
     animation-name: slideIn;
@@ -209,14 +209,14 @@ h2 {
 .descriptions-box-2 h1{
 	color: #0F2D5C;
     font-size: 25px;
-    height: auto; /* ä¿®æ­£ï¼šä¸è¦é™åˆ¶æ­»é«˜åº¦ */
+    height: auto; /* 修正：不要限制死高度 */
     justify-content:center;
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 	margin-top:30px;
-	margin-right:0px; /* ä¿®æ­£ï¼šæ‰‹æ©Ÿç‰ˆæœƒæ­ªæŽ‰ */
+	margin-right:0px; /* 修正：手機版會歪掉 */
 	font-weight:400;
 }
 .descriptions-box-2 {
@@ -332,7 +332,7 @@ p{
 }
 .image-box_2 img{
     width:100%;
-    height: auto; /* ä¿®æ­£ï¼šè®“éžå›ºå®šæ¯”ä¾‹åœ–èƒ½è‡ªé©æ‡‰ */
+    height: auto; /* 修正：讓非固定比例圖能自適應 */
     box-shadow:2px 2px 5px rgba(0, 0, 0, 0.3) ;
     border-radius:20px;
     cursor:pointer;
@@ -364,13 +364,13 @@ p{
     text-decoration: none;
     font-weight: bold;
 	width: 100%;
-    max-width: 300px; /* ä¿®æ­£ï¼šé¿å…æ‰‹æ©Ÿç‰ˆçˆ†é–‹ */
+    max-width: 300px; /* 修正：避免手機版爆開 */
     display: inline-block;
     text-align: center;
 }
 
 /* ==========================================
-   é‡æ–°å„ªåŒ–èˆ‡æ“´å……å¾Œçš„ RWD æ‰‹æ©Ÿç‰ˆå€å¡Š (max-width: 768px)
+   重新優化與擴充後的 RWD 手機版區塊 (max-width: 768px)
    ========================================== */
 @media (max-width: 768px) {
     nav {
@@ -390,10 +390,10 @@ p{
     .login-btn {
         padding: 6px 12px;
         font-size: 14px;
-        margin-right: 0px; /* ä¿®æ­£ï¼šåŽŸæœ¬çš„ -50px æœƒè®“æŒ‰éˆ•åœ¨æ‰‹æ©Ÿä¸Šé£›å‡ºèž¢å¹• */
+        margin-right: 0px; /* 修正：原本的 -50px 會讓按鈕在手機上飛出螢幕 */
     }
     
-    /* ä¿®æ­£å››å€‹å¡ç‰‡åœ¨æ‰‹æ©Ÿä¸Šæ”¹ç‚ºå–®æ¬„æŽ’åˆ—ï¼Œä¸”é«˜åº¦è‡ªé©æ‡‰ */
+    /* 修正四個卡片在手機上改為單欄排列，且高度自適應 */
     .summary-box {
         flex-direction: column;
         height: auto;
@@ -402,33 +402,33 @@ p{
         gap: 20px;
     }
     
-    /* ä¿®æ­£å¤§æ¨™é¡Œåœ¨æ‰‹æ©Ÿä¸ŠéŽå¤§çš„å•é¡Œ */
+    /* 修正大標題在手機上過大的問題 */
     h2 {
         font-size: 32px;
     }
     
-    /* é—œéµä¿®æ­£ï¼šè®“å·¦å³ä¸¦æŽ’çš„å€å¡Šåœ¨æ‰‹æ©Ÿä¸Šè®Šæˆä¸Šä¸‹ç–Šæ”¾ */
+    /* 關鍵修正：讓左右並排的區塊在手機上變成上下疊放 */
     .guide, .safety-guide {
         flex-direction: column !important;
         width: 95%;
         gap: 20px;
     }
     
-    /* æ‰‹æ©Ÿä¸Šå¯¬åº¦å…¨æ»¿ï¼Œé¿å…æ–‡å­—æˆ–åœ–ç‰‡è¢«æ“ æˆç´°é•·æ¢ */
+    /* 手機上寬度全滿，避免文字或圖片被擠成細長條 */
     .image-box, .description-box, .description-box-3, .image-box_3 {
         width: 100% !important;
         margin-left: 0 !important;
         padding: 20px !important;
     }
     
-    /* é—œéµä¿®æ­£ï¼šè§£æ±ºåœ–ç‰‡å£“æ­»æ–‡å­—çš„å•é¡Œï¼Œé«˜åº¦æ”¹ç‚ºè‡ªå‹•æˆ–é©ä¸­é«˜åº¦ */
+    /* 關鍵修正：解決圖片壓死文字的問題，高度改為自動或適中高度 */
     .image-box img, .image-box_3 img {
         height: 300px !important; 
         object-fit: cover;
         margin-top: 10px !important;
     }
     
-    /* èª¿æ•´æ‰‹æ©Ÿç‰ˆå­—é«”å¤§å°ï¼Œé¿å…æº¢å‡º */
+    /* 調整手機版字體大小，避免溢出 */
     .description-box, p {
         font-size: 16px !important;
     }
@@ -463,7 +463,7 @@ p {
 
 .image-box_2 {
     width: 90%;
-    margin: 0 auto; /* ä¿®æ­£ï¼šå–æ¶ˆå›ºå®š margin-leftï¼Œæ”¹ç‚ºå±…ä¸­ */
+    margin: 0 auto; /* 修正：取消固定 margin-left，改為居中 */
     animation-name: slideIn;
     animation-duration: 1s;
     animation-timing-function: ease-out;
@@ -485,7 +485,7 @@ p {
 
 .image-box_2 img {
     width: 100%;
-    height: auto; /* ä¿®æ­£ï¼šé˜²æ­¢åœ–ç‰‡æ¯”ä¾‹åœ¨æ‰‹æ©Ÿä¸Šè¢«å£“æ‰ */
+    height: auto; /* 修正：防止圖片比例在手機上被壓扁 */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     cursor: pointer;
@@ -495,7 +495,7 @@ p {
     border: 3px solid white;
 }
 
-/* ä¿®æ­£ï¼šHTML æ¨™ç±¤é¸æ“‡å™¨ä¸å¯ä»¥æ¼æŽ‰é»žï¼Œå¦‚æžœæ˜¯ class è¨˜å¾—åŠ é»žï¼Œé€™è£¡å…ˆå¹«ä½ ä¿®å¾©èªžæ³• */
+/* 修正：HTML 標籤選擇器不可以漏掉點，如果是 class 記得加點，這裡先幫你修復語法 */
 safety-guide {
     display: flex;
     flex-direction: row-reverse;
@@ -513,7 +513,7 @@ safety-guide {
 .image-box_3 img {
     width: 100%;
     margin-top: 60px;
-    height: 600px; /* ä¿®æ­£ï¼šç¶²é ç«¯é«˜åº¦å¾ž 1000px ç¸®å°åˆ° 600pxï¼Œé¿å…éŽé•·ï¼Œæ‰‹æ©Ÿç‰ˆæœƒå†èª¿å° */
+    height: 600px; /* 修正：網頁端高度從 1000px 縮小到 600px，避免過長，手機版會再調小 */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     cursor: pointer;
@@ -529,8 +529,8 @@ safety-guide {
     text-decoration: none;
     font-weight: bold;
 	width: 100%;
-    max-width: 300px; /* ä¿®æ­£ï¼šé™åˆ¶æœ€å¤§å¯¬åº¦ï¼Œé˜²æ­¢æ‰‹æ©Ÿçˆ†é–‹ */
-    margin: 40px auto 0 auto; /* ä¿®æ­£ï¼šmargin-top å¾ž 80px ç¸®å°ï¼Œä¸¦è‡ªå‹•å±…ä¸­ */
+    max-width: 300px; /* 修正：限制最大寬度，防止手機爆開 */
+    margin: 40px auto 0 auto; /* 修正：margin-top 從 80px 縮小，並自動居中 */
     display: flex;       
     justify-content: center;
     align-items: center;
@@ -546,17 +546,17 @@ safety-guide {
     display: flex;
     gap: 40px;
     justify-content: center;
-    align-items: stretch; /* ä¿®æ­£ï¼šé«˜åº¦å°é½Š */
+    align-items: stretch; /* 修正：高度對齊 */
     width: 90%;
-    margin: 0 auto; /* ä¿®æ­£ï¼šå–æ¶ˆå›ºå®šåå¿ƒçš„ margin-left/right */
+    margin: 0 auto; /* 修正：取消固定偏心的 margin-left/right */
     box-sizing: border-box;
 }
 
 .card {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    height: auto; /* ä¿®æ­£ï¼šé«˜åº¦æ”¹ç‚ºè‡ªå‹•ï¼Œé  padding æ’é–‹ï¼Œçµ•ä¸é‡ç–Š */
-    min-height: 450px; /* çµ¦äºˆä¸€å€‹åŸºç¤Žé«˜åº¦ */
-    padding: 30px 20px; /* æ–°å¢žå…§é‚Šè·ï¼Œé˜²æ­¢å­—è²¼é‚Š */
+    height: auto; /* 修正：高度改為自動，靠 padding 撐開，絕不重疊 */
+    min-height: 450px; /* 給予一個基礎高度 */
+    padding: 30px 20px; /* 新增內邊距，防止字貼邊 */
     gap: 20px;
     flex: 1;
     display: flex;
@@ -582,7 +582,7 @@ ul {
 h4 {
     color: white;
     font-size: 40px;
-    height: auto; /* ä¿®æ­£ï¼šé«˜åº¦ä¸è¦é™åˆ¶æ­» */
+    height: auto; /* 修正：高度不要限制死 */
     margin-bottom: 20px;
 	display: flex;
     justify-content: center;
@@ -595,7 +595,7 @@ h5 {
     color: white;
     width: 100%;
     text-align: left;
-    margin: 0; /* ä¿®æ­£ï¼šåŽŸæœ¬çš„è²  margin åœ¨æ‰‹æ©Ÿä¸ŠæœƒæŠŠå­—å¾€ä¸Šç§»å£“åˆ°åˆ¥çš„å­— */
+    margin: 0; /* 修正：原本的負 margin 在手機上會把字往上移壓到別的字 */
     padding: 0 15px;
     font-size: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -614,7 +614,7 @@ body {
 .flex-container {
     display: flex;
     flex-wrap: wrap; 
-    justify-content: center; /* ä¿®æ­£ï¼šæ”¹ç‚ºç½®ä¸­æŽ’ç‰ˆæ¯”è¼ƒå¥½çœ‹ */
+    justify-content: center; /* 修正：改為置中排版比較好看 */
     gap: 30px; 
     padding: 60px 10%;
     box-sizing: border-box;
@@ -623,7 +623,7 @@ body {
 
 .reveal-card {
     width: calc(33.333% - 20px); 
-    min-width: 280px; /* ä¿®æ­£ï¼šç¨å¾®èª¿å°åŸºæœ¬å¯¬åº¦ï¼Œé©æ‡‰å°èž¢å¹• */
+    min-width: 280px; /* 修正：稍微調小基本寬度，適應小螢幕 */
     height: 420px;
     position: relative;
     border-radius: 24px !important;
@@ -694,25 +694,25 @@ body {
 @media screen and (max-width: 768px) {
     
     nav {
-        padding: 10px 4% !important; /* ä¿æŒæ‰‹æ©Ÿç‰ˆå¾®ç¸®ç•™ç™½ */
+        padding: 10px 4% !important; /* 保持手機版微縮留白 */
         display: flex !important;
-        justify-content: space-between !important; /* å¼·åˆ¶å·¦å³å…ƒç´ å½ˆé–‹åˆ°å…©å´ */
+        justify-content: space-between !important; /* 強制左右元素彈開到兩側 */
     }
     
-    /* ðŸ’¡ æ ¸å¿ƒä¿®æ­£ï¼šç¸®å°é¸å–®çš„å¯¬åº¦ï¼Œä¸¦ç”¨ margin-right ä¸»å‹•æŠŠ Log In æŒ‰éˆ•å¾€å³é‚ŠæŽ¨é–‹ */
+    /* 💡 核心修正：縮小選單的寬度，並用 margin-right 主動把 Log In 按鈕往右邊推開 */
     nav ul {
         display: flex !important;
-        gap: 10px !important;         /* ç¨å¾®ç¸®å°æ–‡å­—é¸é …ä¹‹é–“çš„é–“è·ï¼Œé¨°å‡ºç©ºé–“ */
-        margin-right: 20px !important; /* ðŸ”¥ é—œéµï¼šç”¨æ­£çš„ margin æŠŠå³é‚Šçš„ç™»å…¥æŒ‰éˆ•å¼·è¡ŒæŽ¨é–‹ 20pxï¼Œé˜²æ­¢å¤ªæŽ¥è¿‘ */
+        gap: 10px !important;         /* 稍微縮小文字選項之間的間距，騰出空間 */
+        margin-right: 20px !important; /* 🔥 關鍵：用正的 margin 把右邊的登入按鈕強行推開 20px，防止太接近 */
         padding: 0 !important;
 		 margin: 0 100px 0 auto; 
     }
 
-    /* ç¢ºä¿æ‰‹æ©Ÿç‰ˆçš„æ–‡å­—å’Œç™»å…¥æŒ‰éˆ•ä¸æœƒè²¼åœ¨ä¸€èµ· */
+    /* 確保手機版的文字和登入按鈕不會貼在一起 */
     .login-btn.mobile-login {
         margin-right: 0px !important;  
         padding: 6px 12px !important;  
         font-size: 14px !important;    
-        flex-shrink: 0 !important;     /* ðŸ”¥ é˜²æ­¢æŒ‰éˆ•åœ¨å°èž¢å¹•ä¸Šè¢«æ–‡å­—æ“ å£“åˆ°è®Šå½¢ */
+        flex-shrink: 0 !important;     /* 🔥 防止按鈕在小螢幕上被文字擠壓到變形 */
     }
 }
